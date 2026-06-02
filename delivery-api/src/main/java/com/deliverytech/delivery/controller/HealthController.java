@@ -1,4 +1,4 @@
-package com.deliverytech.delivery_api.controller;
+package com.deliverytech.delivery.controller;
 
 import java.time.LocalDateTime;
 import java.util.Map;
@@ -21,14 +21,21 @@ public class HealthController {
 
     @GetMapping("/info")
     public AppInfo info() {
-        return new AppInfo("Delivery Tech API", "1.0,", "Elaine", "Spring boot");
+       return new AppInfo(
+            "Delivery Tech API",
+            "1.0.0",
+            "[Seu Nome]",
+            "JDK 21",
+            "Spring Boot 3.2.x"
+       );
     }
 
+   
     public record AppInfo(
-        String application,
-        String version,
-        String developer,
-        String framework
-    ){}
-
+       String application,
+       String version,
+       String developer,
+       String javaVersion,
+       String framework
+    ) {}
 }
